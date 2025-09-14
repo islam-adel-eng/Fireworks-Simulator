@@ -7,7 +7,7 @@ add_executable(main)
 
 target_sources(main
 PRIVATE
-    main.c
+    "src/main.c"
 )
 
 target_link_libraries(main SDL3::SDL3)
