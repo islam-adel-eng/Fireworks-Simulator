@@ -4,13 +4,21 @@
 #include <SDL3/SDL_main.h>
 #include <stdio.h>
 
+SDL_Renderer *renderer = NULL;
+SDL_Window *window = NULL;
+
+int windowWidth, windowHeight = {512, 512};
+
 SDL_AppResult SDL_AppInit(void **appstate, int argc, char **argv)
 {
     if (!SDL_Init)
     {
         return SDL_APP_FAILURE;
     }
-    
+    if (!SDL_CreateWindowAndRenderer("Fireworks Simulator", windowWidth, windowHeight, 0, &window, &renderer))
+    {
+        return SDL_APP_FAILURE;
+    }
     return SDL_APP_CONTINUE;
 }
 
