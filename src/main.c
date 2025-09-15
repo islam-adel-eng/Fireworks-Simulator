@@ -15,7 +15,7 @@ SDL_Window *window = NULL;
 
 SDL_AppResult SDL_AppInit(void **appstate, int argc, char **argv)
 {
-    if (!SDL_Init)
+    if (SDL_Init(SDL_INIT_VIDEO) != 0)
     {
         return SDL_APP_FAILURE;
     }
