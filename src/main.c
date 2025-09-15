@@ -28,6 +28,8 @@ SDL_AppResult SDL_AppInit(void **appstate, int argc, char **argv)
 
 SDL_AppResult SDL_AppIterate(void *appstate)
 {
+    SDL_RenderClear(renderer);
+    SDL_RenderPresent(renderer);
     return SDL_APP_CONTINUE;
 }
 
@@ -42,5 +44,5 @@ SDL_AppResult SDL_AppEvent(void *appstate, SDL_Event *event)
 
 void SDL_AppQuit(void *appstate, SDL_AppResult result)
 {
-    
+
 }
